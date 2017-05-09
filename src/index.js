@@ -1,4 +1,4 @@
-import * as electronPrinter from 'electron-printer';
+import * as electronPrinter from 'electron-printer2';
 import { app, ipcMain, BrowserWindow } from 'electron';
 
 let mainWindow;

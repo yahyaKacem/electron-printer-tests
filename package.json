@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "electron-compile": "^6.4.1",
-    "electron-printer": "^0.0.5",
+    "electron-printer2": "^1.0.0",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
