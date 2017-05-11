@@ -7,7 +7,7 @@ ipcMain.on('printFile', (event, args) => {
   electronPrinter.printFile({
     filename: args.file,
     error:    (err) => console.log(err),
-    printer:  electronPrinter.getPrinters()[0].name,
+    printer:  electronPrinter.getPrinters().filter((printer) => /^EPSON/.test(printer.name))[0].name,
     success:  (jobID) => console.log(`sent to printer with ID: ${jobID}`)
   });
 });
@@ -16,7 +16,7 @@ ipcMain.on('printText', (event, args) => {
     type:    'TEXT',
     data:    args.text,
     error:   (err) => console.log(err),
-    printer: electronPrinter.getPrinters()[0].name,
+    printer: electronPrinter.getPrinters().filter((printer) => /^EPSON/.test(printer.name))[0].name,
     success: (jobID) => console.log(`sent to printer with ID: ${jobID}`)
   });
 });
